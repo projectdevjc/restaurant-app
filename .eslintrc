@@ -1,0 +1,49 @@
+{
+  "extends": [
+    "eslint-config-codely/typescript",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "hexagonal-architecture"
+  ],
+  "root": true,
+  "overrides": [
+    {
+      "files": [
+        "src/contexts/**/*.ts"
+      ],
+      "rules": {
+        "hexagonal-architecture/enforce": [
+          "error"
+        ]
+      }
+    }
+  ],
+  "rules": {
+    "no-console": "warn",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "padding-line-between-statements": "off",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  },
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json"
+    ]
+  }
+}
